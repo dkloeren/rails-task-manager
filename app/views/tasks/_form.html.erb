@@ -1,0 +1,15 @@
+<h1>Edit Task</h1>
+<!-- This form helper automatically sets: -->
+  <!-- action = 'create' .. so after clicking submit it will trigger "create" -->
+  <!-- hidden authentication token for session -->
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title  %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <% if @task.new_record? == false %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
